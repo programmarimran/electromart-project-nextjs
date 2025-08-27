@@ -15,9 +15,9 @@ export interface Product {
   image: string;
 }
 
-export default async function ProductsPage() {
+export default async function ProductsSection() {
  
- const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+ const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home-products`, {cache:"no-store"});
  const products:Product[] = await data.json()
   
   return (
