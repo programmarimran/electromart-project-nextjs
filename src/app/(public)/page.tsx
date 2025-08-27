@@ -1,4 +1,5 @@
 "use client";
+import Hero from "@/components/shared/Hero";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
   if (status === "loading") return <p>Loading...</p>;
   return (
    <div>
+    <Hero/>
     Home Page
     {status === "authenticated" ? (
       <div>

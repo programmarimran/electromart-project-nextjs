@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Product {
+export interface Product {
   _id: string;
   name: string;
   description: string;
