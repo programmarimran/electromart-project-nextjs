@@ -1,7 +1,5 @@
 "use client";
 import React, { ChangeEvent, FormEvent, useState } from "react";
-
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +14,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, Mail, Lock, Zap } from "lucide-react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 // Type for form data
 interface FormData {
   email: string;
@@ -30,8 +28,6 @@ interface FormErrors {
 }
 
 const SignInPage = () => {
- const searchParams = useSearchParams();
-const callbackUrl = searchParams.get("callbackUrl") || "/";
   const router = useRouter();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -87,44 +83,39 @@ const callbackUrl = searchParams.get("callbackUrl") || "/";
     }
   };
   console.log(formData);
-const handleSubmit = async (
-  e: FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
-): Promise<void> => {
-  e.preventDefault();
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ): Promise<void> => {
+    e.preventDefault();
 
-  if (!validateForm()) {
-    return;
-  }
-
-  try {
-    setIsLoading(true);
-    setGeneralError("");
-
-    // Credentials provider signIn
-    const res = await signIn("credentials", {
-      redirect: false,
-      email: formData.email,
-      password: formData.password,
-      callbackUrl, // comes from useSearchParams()
-    });
-
-    if (res?.error) {
-      alert("❌ " + res.error);
-    } else {
-      alert("✅ Login successful");
-
-      // redirect to callbackUrl (or home if missing)
-      router.push(res?.url || callbackUrl || "/");
+    if (!validateForm()) {
+      return;
     }
 
-    console.log("Sign-in response:", res);
-  } catch (error) {
-    setGeneralError("Something went wrong. Please try again.");
-  } finally {
-    setIsLoading(false);
-  }
-};
+    try {
+      setIsLoading(true);
+      setGeneralError("");
 
+      // Credentials provider signIn
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (res?.error) {
+        alert("❌ " + res.error);
+      } else {
+        alert("✅ Login successful");
+        router.push("/"); // redirect after login
+      }
+      console.log("Sign-in response:", res);
+    } catch (error) {
+      setGeneralError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-4">

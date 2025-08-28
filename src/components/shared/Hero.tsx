@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero1.avif"
+import hero1 from "@/assets/hero1.png"
 import hero2 from "@/assets/hero2.jpg"
 import hero3 from "@/assets/hero3.jpg"
 // Import Swiper styles

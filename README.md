@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ElectroMart
 
-## Getting Started
+ElectroMart is a modern e-commerce application built with Next.js 15, TypeScript, and Tailwind CSS. It offers a seamless shopping experience with features like product browsing, authentication, and responsive design.
 
-First, run the development server:
+## Features
 
-```bash
+- **Product Catalog**: Browse a wide range of electronic products.
+- **Authentication**: Secure login and registration using NextAuth.js.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Image Optimization**: Utilizes Next.js Image component for efficient image loading.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 18, TypeScript, Tailwind CSS
+- **Authentication**: NextAuth.js
+- **Image Handling**: Next.js Image component
+- **Styling**: Tailwind CSS, DaisyUI
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/electromart.git
+   cd electromart
+Install dependencies:
+
+bash
+Copy code
+npm install
+Set up environment variables:
+
+Create a .env.local file in the root directory and add the following:
+
+env
+Copy code
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+Run the development server:
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The application will be accessible at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build & Production
+To build the application for production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+bash
+Copy code
+npm run build
+npm start
+The production build will be available at http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Demo Credentials
+Use the following credentials to log in:
 
-## Learn More
+Email: demo@electromart.com
 
-To learn more about Next.js, take a look at the following resources:
+Password: password123
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Notes
+AVIF images are not supported in Turbopack. They will be emitted without optimization or encoding.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ensure your environment variables are correctly set to avoid runtime errors.
 
-## Deploy on Vercel
+License
+This project is licensed under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+pgsql
+Copy code
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I made sure it’s **all in one block** so you can copy and paste directly.  
+
+If you want, I can also **add a “Live Demo” section** with your deployed Vercel link.
