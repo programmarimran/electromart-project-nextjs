@@ -21,7 +21,7 @@ ElectroMart is a modern e-commerce application built with Next.js 15, TypeScript
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/electromart.git
+   git clone https://github.com/programmarimran/electromart-project-nextjs.git
    cd electromart
 Install dependencies:
 
