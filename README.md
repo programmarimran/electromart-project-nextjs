@@ -1,5 +1,5 @@
 # ElectroMart
-
+Live: https://electromart-one.vercel.app/
 ElectroMart is a modern e-commerce application built with Next.js 15, TypeScript, and Tailwind CSS. It offers a seamless shopping experience with features like product browsing, authentication, and responsive design.
 
 ## Features
